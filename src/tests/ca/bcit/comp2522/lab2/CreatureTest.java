@@ -1,7 +1,15 @@
 package ca.bcit.comp2522.lab2;
 
+/**
+ * Runs a basic demonstration of the creature classes.
+ */
 public class CreatureTest
 {
+    /**
+     * Creates example creatures and exercises their behavior.
+     *
+     * @param args command-line arguments
+     */
     public static void main(final String[] args)
     {
         try
@@ -21,14 +29,12 @@ public class CreatureTest
             final Orc orc;
             orc = new Orc("Orc",
                     new Date(2010, 4, 23),
-            40,
+                    40,
                     20);
 
             System.out.println(dragon.getDetails());
             System.out.println(elf.getDetails());
             System.out.println(orc.getDetails());
-
-
 
             System.out.println(dragon instanceof Creature);
             System.out.println(dragon.getClass());
@@ -43,9 +49,6 @@ public class CreatureTest
             elf.castSpell(dragon);
             orc.berserk(dragon);
             dragon.breatheFire(orc);
-
-
-
         }
         catch (final DamageException e)
         {
@@ -54,10 +57,12 @@ public class CreatureTest
         catch (final HealingException e)
         {
             System.out.println("Healing error: " + e.getMessage());
-        } catch (final LowManaException e)
+        }
+        catch (final LowManaException e)
         {
             System.out.println("Elf error: " + e.getMessage());
-        } catch (LowFirePowerException e)
+        }
+        catch (final LowFirePowerException e)
         {
             System.out.println("Fire power error: " + e.getMessage());
         }
