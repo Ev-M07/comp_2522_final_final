@@ -52,9 +52,13 @@ public class Orc extends Creature
      */
     private static void validateRage(final int rage)
     {
-        if (rage < MIN_RAGE || rage > MAX_RAGE)
+        if (rage < MIN_RAGE ||
+                rage > MAX_RAGE)
         {
-            throw new LowRageException("Mana must be between " + MIN_RAGE + " and" + MAX_RAGE);
+            throw new LowRageException("Mana must be between " +
+                    MIN_RAGE +
+                    " and"   +
+                    MAX_RAGE);
         }
     }
 
@@ -85,6 +89,8 @@ public class Orc extends Creature
     @Override
     public String getDetails()
     {
-        return super.getDetails() + ", rage" + rage;
+        return super.getDetails() +
+                ", rage"          +
+                rage;
     }
 }

@@ -48,7 +48,8 @@ public class Elf extends Creature
      */
     private static void validateMana(final int mana)
     {
-        if (mana < MIN_MANA || mana > MAX_MANA)
+        if (mana < MIN_MANA ||
+                mana > MAX_MANA)
         {
             throw new IllegalArgumentException("invalid mana");
         }
@@ -96,6 +97,8 @@ public class Elf extends Creature
     @Override
     public String getDetails()
     {
-        return super.getDetails() + ", Mana: " + mana;
+        return super.getDetails() +
+                ", Mana: "        +
+                mana;
     }
 }

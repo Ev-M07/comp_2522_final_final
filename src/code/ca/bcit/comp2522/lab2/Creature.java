@@ -5,7 +5,6 @@ package ca.bcit.comp2522.lab2;
  */
 public class Creature
 {
-    private static final int ZERO_HEALTH;
     private static final int MIN_HEALTH;
     private static final int MAX_HEALTH;
     private static final int MIN_DAMAGE;
@@ -17,7 +16,6 @@ public class Creature
 
     static
     {
-        ZERO_HEALTH = 0;
         MIN_HEALTH  = 1;
         MAX_HEALTH  = 100;
         MIN_DAMAGE  = 0;
@@ -108,7 +106,7 @@ public class Creature
      */
     private boolean isAlive()
     {
-        return health > ZERO_HEALTH;
+        return health > MIN_HEALTH;
     }
 
     /**
@@ -127,9 +125,9 @@ public class Creature
 
         health -= damage;
 
-        if (health < ZERO_HEALTH)
+        if (health < MIN_HEALTH)
         {
-            health = ZERO_HEALTH;
+            health = MIN_HEALTH;
         }
     }
 
@@ -142,7 +140,7 @@ public class Creature
      */
     public void heal(final int healAmount)
     {
-        if (health < ZERO_HEALTH)
+        if (health < MIN_HEALTH)
         {
             throw new HealingException("healing cant be negative");
         }
@@ -173,13 +171,13 @@ public class Creature
      */
     public String getDetails()
     {
-        return "Name: " +
-                name +
-                ", DOB: " +
-                dateOfBirth +
-                ", Age: " +
+        return "Name: "       +
+                name          +
+                ", DOB: "     +
+                dateOfBirth   +
+                ", Age: "     +
                 getAgeYears() +
-                ", Health: " +
+                ", Health: "  +
                 health;
     }
 }

@@ -98,7 +98,8 @@ public class Date
      */
     private static void validateMonth(final int month)
     {
-        if (month < MIN_MONTH || month > MAX_MONTH)
+        if (month < MIN_MONTH ||
+                month > MAX_MONTH)
         {
             throw new IllegalArgumentException("invalid month");
         }
@@ -112,7 +113,8 @@ public class Date
      */
     private static void validateDay(final int day)
     {
-        if (day < MIN_DAY || day > MAX_DAY)
+        if (day < MIN_DAY ||
+                day > MAX_DAY)
         {
             throw new IllegalArgumentException("invalid day");
         }
@@ -136,6 +138,10 @@ public class Date
     @Override
     public String toString()
     {
-        return year + "-" + month + "-" + day;
+        return year   +
+                "-"   +
+                month +
+                "-"   +
+                day;
     }
 }
